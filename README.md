@@ -7,6 +7,8 @@
 
 <h1 align="center"/>Seevoy</h1>
 
+Seevoy is a Lemmy client. 
+
 Seevoy helps you to see Lemmy with
 enhanced large text support.
 
