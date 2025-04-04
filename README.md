@@ -25,13 +25,13 @@ Seevoy is released under the
 &copy; Seevoy
 
 The source code is available here:
-https://github.com/jayb1dev/voyager/tree/seevoy
+https://github.com/jayb1dev/seevoy
 
 Seevoy is a fork of Voyager, which is also released under the 
 [AGPL-3.0](./LICENSE) license 
 &copy; Voyager contributors
 
-The source code is available here:
+The Voyager source code is available here:
 https://github.com/aeharding/voyager
 
 
