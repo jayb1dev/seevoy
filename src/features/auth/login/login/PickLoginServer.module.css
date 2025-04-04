@@ -1,0 +1,29 @@
+.container {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  font-size:    0.75em;
+}
+
+.list {
+  flex: 1;
+
+  --ion-item-background: none;
+}
+
+.smallerSearchBox {
+  font-size:    0.50em;
+}
+
+.searchBarWidth {
+    margin:         auto;
+    flex-basis:     50px;
+}
+
+.paddingLeft {
+    padding-left:   1.5em;
+}
+
+

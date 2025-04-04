@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 1rem 1rem;
+  font-size: 0.875em;
+  align-items: center;
+  justify-content: center;
+  color: var(--ion-color-medium);
+}
+
+.wrap {
+  word-break:       break-all;
+  word-wrap:        break-word;
+  overflow-wrap:    break-word;
+}
+
+

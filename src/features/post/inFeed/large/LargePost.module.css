@@ -1,0 +1,89 @@
+.container {
+  composes: maxWidth from "#/features/shared/shared.module.css";
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  padding: 12px;
+
+  position: relative;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  /* Prevent zalgo */
+  overflow: hidden;
+
+  .read & {
+    color: var(--read-color);
+  }
+}
+
+.titleLarge {
+  font-size: 1.1rem;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 0.8em;
+  color: var(--ion-color-text-aside);
+}
+
+.detailsLarge {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: right;
+}
+
+.leftDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  font-size: 0.85rem;
+  font-weight: 200;
+
+  min-width: 0;
+
+  .read & {
+    color: var(--read-color-medium);
+  }
+}
+
+.rightDetails {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+
+  > * {
+    padding: 0.5rem !important;
+  }
+}
+
+.rightDetailsLarge {
+  display: flex;
+  align-items: right;
+  margin-left: auto;
+}
+
+.communityName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  /* when show community at top and not showing author, avoid gap */
+  &:empty {
+    display: none;
+  }
+}

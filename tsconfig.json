@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+
+    "module": "esnext",
+    "moduleResolution": "bundler",
+
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "allowJs": false,
+
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
+
+    "useDefineForClassFields": true,
+    "noUncheckedIndexedAccess": true,
+
+    "jsx": "react-jsx",
+
+    "paths": {
+      // duplicate of package.json[imports]
+      // typescript doesn't support this same syntax in package.json with
+      // module resolution set to bundler, despite it working fine in esbuild/vite...
+      // https://github.com/microsoft/TypeScript/issues/55337 (╯°□°）╯︵ ┻━┻
+      "#/*": ["./src/*"]
+    }
+  }
+}

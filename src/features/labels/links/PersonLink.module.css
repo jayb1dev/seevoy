@@ -1,0 +1,9 @@
+.prefix {
+  font-weight: normal;
+}
+
+.nowrap {
+  text-wrap: nowrap;
+  white-space: nowrap;
+}
+
