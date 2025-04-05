@@ -33,7 +33,7 @@ export default function AppDetails() {
 
         <IonItemInAppExternalLink
             detail
-            href="https://github.com/jayb1dev/voyager/tree/seevoy"
+            href="https://github.com/jayb1dev/seevoy"
             target="_blank"
             rel="noopener noreferrer"
           >

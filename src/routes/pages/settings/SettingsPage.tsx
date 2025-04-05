@@ -197,16 +197,16 @@ export default function SettingsPage() {
             </IconBg>
             <IonLabel className="ion-text-nowrap">Gestures</IonLabel>
           </IonItem>
-        </IonList>
 
-        <IonList inset>
           <IonItem routerLink="/settings/about">
             <IconBg color="#0e7afe" size="1.15" slot="start">
               <IonIcon icon={at} />
             </IconBg>
             <IonLabel className="ion-text-nowrap">About</IonLabel>
           </IonItem>
+
         </IonList>
+
       </AppContent>
     </IonPage>
   );

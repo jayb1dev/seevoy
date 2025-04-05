@@ -3,6 +3,8 @@
 # Build ios app
 #
 
+start_time=$(date)
+
 #
 # Get current version. Increment current minor version.
 #
@@ -40,10 +42,27 @@ pushd ios/App
 pod install
 popd
 
+echo
+echo "Install workbox-window..."
+echo
+
 pnpm i -D workbox-window
+
+echo
+echo "Installed workbox-window..."
+echo
+
+echo
+echo "Begin: pnpm exec ionic capacitor build ios"
+echo
 
 pnpm exec ionic capacitor build ios
 
+echo
+echo "Completed: pnpm exec ionic capacitor build ios"
+echo
+
+end_time=$(date)
 
 #
 # See:
@@ -54,6 +73,12 @@ echo
 echo
 echo Xcode should automatically open. You can then run the project with CMD+R.
 echo
-echo
+echo "Start time:   ${start_time}"
+echo "End time:     ${end_time}"
+echo 
+echo 
+
+say -v Bells "beep"
+
 
 

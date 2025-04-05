@@ -20,7 +20,7 @@ export default function AppDetails() {
       </div>
       
       <div className={styles.padding}>
-            VERSION 1.0.159
+            VERSION 1.0.167
       </div>
 
       <div className={styles.padding}>
@@ -33,7 +33,7 @@ export default function AppDetails() {
 
         <IonItemInAppExternalLink
             detail
-            href="https://github.com/jayb1dev/voyager/tree/seevoy"
+            href="https://github.com/jayb1dev/seevoy"
             target="_blank"
             rel="noopener noreferrer"
           >
