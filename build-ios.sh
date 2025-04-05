@@ -40,6 +40,8 @@ pushd ios/App
 pod install
 popd
 
+pnpm i -D workbox-window
+
 pnpm exec ionic capacitor build ios
 
 

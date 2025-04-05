@@ -158,6 +158,7 @@
     "vite": "^6.2.0",
     "vite-plugin-pwa": "^0.21.1",
     "vite-plugin-svgr": "^4.3.0",
-    "vitest": "^3.0.7"
+    "vitest": "^3.0.7",
+    "workbox-window": "^7.3.0"
   }
 }
