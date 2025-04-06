@@ -42,3 +42,8 @@
 .segment {
   width: 100%;
 }
+
+.largeText {
+  font-size: 0.875em;
+}
+

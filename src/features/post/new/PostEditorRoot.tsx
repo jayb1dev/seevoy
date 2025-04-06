@@ -408,9 +408,21 @@ export default function PostEditorRoot({
             value={postType}
             onIonChange={(e) => setPostType(e.target.value as PostType)}
           >
-            <IonSegmentButton value="photo">Photo</IonSegmentButton>
-            <IonSegmentButton value="link">Link</IonSegmentButton>
-            <IonSegmentButton value="text">Text</IonSegmentButton>
+            <IonSegmentButton   className={styles.largeText}
+                                value="photo">
+                Photo
+            </IonSegmentButton>
+
+            <IonSegmentButton   className={styles.largeText}
+                                value="link">
+                Link
+            </IonSegmentButton>
+
+            <IonSegmentButton   className={styles.largeText}
+                                value="text">
+                Text
+            </IonSegmentButton>
+
           </IonSegment>
         </IonToolbar>
       </AppHeader>
