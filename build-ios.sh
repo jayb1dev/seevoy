@@ -60,6 +60,11 @@ echo
 
 ${command}
 
+if [ $? != 0 ]; then
+    say "Build failed"
+    exit 1
+fi
+
 echo
 echo "Completed: ${command}"
 echo

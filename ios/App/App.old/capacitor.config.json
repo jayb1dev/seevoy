@@ -1,0 +1,41 @@
+{
+	"appId": "app.vger.voyager",
+	"appName": "Voyager",
+	"webDir": "dist",
+	"server": {
+		"androidScheme": "https"
+	},
+	"plugins": {
+		"Keyboard": {
+			"resize": "ionic",
+			"resizeOnFullScreen": true
+		},
+		"SplashScreen": {
+			"launchShowDuration": 3000,
+			"launchFadeOutDuration": 0
+		},
+		"CapacitorHttp": {
+			"enabled": true
+		}
+	},
+	"packageClassList": [
+		"AppIconPlugin",
+		"AppPlugin",
+		"FilesystemPlugin",
+		"HapticsPlugin",
+		"KeyboardPlugin",
+		"CAPNetworkPlugin",
+		"SharePlugin",
+		"SplashScreenPlugin",
+		"StatusBarPlugin",
+		"NavModePlugin",
+		"ApplicationContextPlugin",
+		"BiometricLockPlugin",
+		"ClearCachePlugin",
+		"LaunchNativePlugin",
+		"SafeAreaPlugin",
+		"ReaderPlugin",
+		"ShareSafariPlugin",
+		"StashMediaPlugin"
+	]
+}

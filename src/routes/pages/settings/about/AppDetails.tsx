@@ -20,7 +20,7 @@ export default function AppDetails() {
       </div>
       
       <div className={styles.padding}>
-            VERSION 1.0.186
+            VERSION 1.0.203
       </div>
 
       <div className={styles.padding}>

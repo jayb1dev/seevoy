@@ -1,6 +1,6 @@
 {
-  "name": "voyager",
-  "description": "A progressive webapp Lemmy client",
+  "name": "seevoy",
+  "description": "Lemmy client with large text support",
   "private": true,
   "version": "2.24.4",
   "type": "module",
