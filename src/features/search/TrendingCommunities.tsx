@@ -29,7 +29,7 @@ export default function TrendingCommunities() {
   return (
     <IonList inset color="primary">
       <IonListHeader>
-        <IonLabel className={styles.label}>Trending communities</IonLabel>
+        <IonLabel className={styles.label}>Trending</IonLabel>
       </IonListHeader>
       {trendingCommunities?.map((community) => (
         <IonItem

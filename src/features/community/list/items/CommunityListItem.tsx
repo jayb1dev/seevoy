@@ -143,9 +143,7 @@ export default function CommunityListItem({
 
             </div>
 
-            <div 
-                className={styles.wrap}>
-
+            <div className={styles.wrap}>
                 {handle}
             </div>
 

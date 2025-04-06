@@ -47,7 +47,9 @@ export default function SpecialItem({
 
         <div>
           {getTitle(type)}
-          <aside>{getDescription(type, actor)}</aside>
+          {
+            // <aside>{getDescription(type, actor)}</aside>
+          } 
         </div>
       </div>
     </IonItem>

@@ -118,7 +118,7 @@ export default function SpecialFeedPage({ type }: SpecialFeedProps) {
               <IonToolbar>
                 <IonButtons slot="start">
                   <IonBackButton
-                    text="Communities"
+                    text="Coms"
                     defaultHref={buildGeneralBrowseLink("")}
                   />
                 </IonButtons>

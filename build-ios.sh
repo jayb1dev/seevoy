@@ -52,14 +52,16 @@ echo
 echo "Installed workbox-window..."
 echo
 
-echo
-echo "Begin: pnpm exec ionic capacitor build ios"
-echo
-
-pnpm exec ionic capacitor build ios
+command="pnpm exec ionic capacitor build ios"
 
 echo
-echo "Completed: pnpm exec ionic capacitor build ios"
+echo "Begin: ${command}"
+echo
+
+${command}
+
+echo
+echo "Completed: ${command}"
 echo
 
 end_time=$(date)
@@ -78,7 +80,7 @@ echo "End time:     ${end_time}"
 echo 
 echo 
 
-say -v Bells "beep"
+say "Build completed"
 
 
 
