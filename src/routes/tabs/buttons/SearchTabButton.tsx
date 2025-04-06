@@ -1,5 +1,5 @@
 import { IonIcon, IonLabel } from "@ionic/react";
-import { search } from "ionicons/icons";
+import { search, searchCircleOutline } from "ionicons/icons";
 
 import { focusSearchBar } from "#/routes/pages/search/SearchPage";
 
@@ -12,8 +12,8 @@ function SearchTabButton(props: TabButtonProps) {
       onBeforeBackAction={focusSearchBar}
       onLongPressExtraAction={onLongPressExtraAction}
     >
-      <IonIcon aria-hidden="true" icon={search} />
-      <IonLabel>Search</IonLabel>
+      <IonIcon aria-hidden="true" icon={searchCircleOutline} />
+      <IonLabel>SEARCH</IonLabel>
     </SharedTabButton>
   );
 }

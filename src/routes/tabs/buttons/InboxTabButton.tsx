@@ -1,5 +1,5 @@
 import { IonBadge, IonIcon, IonLabel } from "@ionic/react";
-import { fileTray } from "ionicons/icons";
+import { fileTray, mailOutline} from "ionicons/icons";
 
 import { totalUnreadSelector } from "#/features/inbox/inboxSlice";
 import { formatNumber } from "#/helpers/number";
@@ -14,8 +14,8 @@ function InboxTabButton(props: TabButtonProps) {
 
   return (
     <SharedTabButton {...props}>
-      <IonIcon aria-hidden="true" icon={fileTray} />
-      <IonLabel>Inbox</IonLabel>
+      <IonIcon aria-hidden="true" icon={mailOutline} />
+      <IonLabel>MAIL</IonLabel>
       {totalUnread ? (
         <IonBadge
           color="danger"

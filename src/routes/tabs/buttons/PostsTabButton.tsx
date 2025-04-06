@@ -1,5 +1,5 @@
 import { IonIcon, IonLabel } from "@ionic/react";
-import { telescope } from "ionicons/icons";
+import { telescope, documentOutline } from "ionicons/icons";
 
 import { instanceSelector, jwtSelector } from "#/features/auth/authSelectors";
 import { openTitleSearch } from "#/features/community/titleSearch/TitleSearch";
@@ -52,8 +52,8 @@ function PostsTabButton(props: TabButtonProps) {
       customBackAction={customBackAction}
       onLongPressExtraAction={onLongPressExtraAction}
     >
-      <IonIcon aria-hidden="true" icon={telescope} />
-      <IonLabel>Posts</IonLabel>
+      <IonIcon aria-hidden="true" icon={documentOutline} />
+      <IonLabel>POSTS</IonLabel>
     </SharedTabButton>
   );
 }

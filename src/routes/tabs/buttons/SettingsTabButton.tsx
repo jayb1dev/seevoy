@@ -1,5 +1,5 @@
 import { IonBadge, IonIcon, IonLabel } from "@ionic/react";
-import { cog } from "ionicons/icons";
+import { cog, settingsOutline } from "ionicons/icons";
 import { useContext } from "react";
 
 import useShouldInstall from "#/features/pwa/useShouldInstall";
@@ -26,8 +26,8 @@ function SettingsTabButton(props: TabButtonProps) {
 
   return (
     <SharedTabButton {...props}>
-      <IonIcon aria-hidden="true" icon={cog} />
-      <IonLabel>Settings</IonLabel>
+      <IonIcon aria-hidden="true" icon={settingsOutline} />
+      <IonLabel>SETTINGS</IonLabel>
       {settingsBadge}
     </SharedTabButton>
   );

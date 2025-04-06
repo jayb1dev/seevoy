@@ -1,5 +1,5 @@
 import { IonIcon, IonLabel } from "@ionic/react";
-import { personCircleOutline } from "ionicons/icons";
+import { personCircleOutline, personOutline } from "ionicons/icons";
 import { useContext } from "react";
 
 import {
@@ -65,8 +65,11 @@ function ProfileTabButton(props: TabButtonProps) {
       onBeforeBackAction={onBeforeBackAction}
       onLongPressOverride={onLongPressOverride}
     >
-      <IonIcon aria-hidden="true" icon={personCircleOutline} />
-      <IonLabel className={styles.profileLabel}>{profileTabLabel}</IonLabel>
+      <IonIcon aria-hidden="true" icon={personOutline} />
+      <IonLabel>USER</IonLabel>
+      {
+        // <IonLabel className={styles.profileLabel}>{profileTabLabel}</IonLabel>
+      }
     </SharedTabButton>
   );
 }
