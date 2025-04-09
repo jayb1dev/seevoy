@@ -4,6 +4,9 @@ import React, { MouseEvent, useRef } from "react";
 import AnimateHeight from "react-animate-height";
 import { useLongPress } from "use-long-press";
 
+import { useIonModal } from "@ionic/react";
+import SleepDialog from "#/features/sleep/SleepDialog";
+
 import Save from "#/features/labels/Save";
 import { ModeratableItemBannerOutlet } from "#/features/moderation/ModeratableItem";
 import ModeratableItem from "#/features/moderation/ModeratableItem";
@@ -76,9 +79,22 @@ export default function Comment({
 
   const collapsed = cannotCollapse ? false : _collapsed;
 
+  const [presentSleep, onDismissTip] = useIonModal(SleepDialog, {
+    onDismiss: (data?: string, role?: string) => onDismissTip(data, role),
+  });
+
   function onCommentLongPress() {
-    commentEllipsisHandleRef.current?.present();
-    stopIonicTapClick();
+
+    //
+    // TODO add settings option to enable/disable sleep mode.
+    //
+    // if (sleepMode) 
+
+    presentSleep();
+
+    // commentEllipsisHandleRef.current?.present();
+    // stopIonicTapClick();
+
   }
 
   const bind = useLongPress(onCommentLongPress, {

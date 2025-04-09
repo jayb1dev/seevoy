@@ -11,6 +11,9 @@ import {
 import AnimateHeight from "react-animate-height";
 import { useLongPress } from "use-long-press";
 
+import { useIonModal } from "@ionic/react";
+import SleepDialog from "#/features/sleep/SleepDialog";
+
 import { useAutohidePostIfNeeded } from "#/features/feed/PageTypeContext";
 import { usePostAppearance } from "#/features/post/appearance/PostAppearanceProvider";
 import usePostActions from "#/features/post/shared/usePostActions";
@@ -87,9 +90,22 @@ function Post(props: PostProps) {
 
   const postAppearance = usePostAppearance();
 
+  const [presentSleep, onDismissTip] = useIonModal(SleepDialog, {
+    onDismiss: (data?: string, role?: string) => onDismissTip(data, role),
+  });
+
   const onPostLongPress = useCallback(() => {
-    openPostActions();
-    stopIonicTapClick();
+
+    //
+    // TODO add settings option to enable/disable sleep mode.
+    //
+    // if (sleepMode)
+
+    presentSleep();
+
+    // openPostActions();
+    // stopIonicTapClick();
+
   }, [openPostActions]);
 
   const bind = useLongPress(onPostLongPress, {
