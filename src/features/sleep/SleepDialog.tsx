@@ -1,5 +1,7 @@
 import { IonIcon } from "@ionic/react";
+
 import { bed } from "ionicons/icons";
+import { close } from "ionicons/icons";
 
 import FloatingDialog from "#/helpers/FloatingDialog";
 
@@ -12,6 +14,9 @@ interface SleepProps {
 export default function SleepDialog({ onDismiss }: SleepProps) {
   return (
     <FloatingDialog onDismiss={onDismiss}>
+      <br />
+      <br />
+      <br />
       <div className={styles.bed}>
         <IonIcon icon={bed} />
       </div>
@@ -19,6 +24,11 @@ export default function SleepDialog({ onDismiss }: SleepProps) {
       <div className={styles.description}>
         Did you fall asleep?
       </div>
+
+      <button className={styles.closeButton} onClick={() => onDismiss()}>
+        Close
+      </button>
+
     </FloatingDialog>
   );
 }

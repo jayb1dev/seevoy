@@ -70,7 +70,7 @@ function SyncUserTag({ tag }: SyncUserTagProps) {
 
   return (
     <span
-      className={styles.tagContainer}
+      className={styles.tagContainerLarge}
       style={
         tag.color
           ? {
@@ -80,7 +80,7 @@ function SyncUserTag({ tag }: SyncUserTagProps) {
           : undefined
       }
     >
-      {tag.text}
+      [ {tag.text} ]
     </span>
   );
 }

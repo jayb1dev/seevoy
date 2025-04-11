@@ -146,8 +146,17 @@ export default function CommentHeader({
                   showTag={false}
                   sourceUrl={commentView.comment.ap_id}
                 />
+
                 {tagsEnabled && trackVotesEnabled && (
                   <UserScore person={commentView.creator} />
+                )}
+              </div>
+
+              <div className={styles.divChildLarge}>
+                {tagsEnabled && (
+                    <>
+                        <UserTag person={commentView.creator} />
+                    </>
                 )}
               </div>
 
@@ -158,9 +167,6 @@ export default function CommentHeader({
                   spacer={true}
                 />
                 <Edited item={commentView} />
-                <div className={styles.spacer}>
-                  {tagsEnabled && <UserTag person={commentView.creator} />}
-                </div>
 
                 {renderAside(comment.published)}
               </div>

@@ -107,7 +107,11 @@ export default function PersonLink({
 
   const tagText = typeof tag === "object" ? tag.text : undefined;
 
-  const shouldHideInstanceWithTagText = tagText && hideInstance;
+  //
+  // const shouldHideInstanceWithTagText = tagText && hideInstance;
+  //
+  const shouldHideInstanceWithTagText = false;
+
   const shouldShowInstanceByDefault =
     showInstanceWhenRemote || forceInstanceUrl;
 
