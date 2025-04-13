@@ -212,10 +212,13 @@ export default function PostHeader({
               {post.post.locked && <Locked />}
             </div>
           </div>
+
         </div>
+
       </IonItem>
+
       {showPostActions && (
-        <IonItem className={styles.borderlessIonItem}>
+        <IonItem className={styles.bottomBorderIonItem}>
           <PostActions
             post={post}
             onReply={async () => {
@@ -235,6 +238,7 @@ export default function PostHeader({
           />
         </IonItem>
       )}
+
     </ModeratableItem>
   );
 }
