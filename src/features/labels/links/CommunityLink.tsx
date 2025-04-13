@@ -5,6 +5,7 @@ import {
   heartOutline,
   removeCircleOutline,
   tabletPortraitOutline,
+  checkmarkOutline,
 } from "ionicons/icons";
 import { Community, SubscribedType } from "lemmy-js-client";
 import { createContext, useContext } from "react";
@@ -124,7 +125,10 @@ export default function CommunityLink({
     <>
       {instance}
       {showSubscribed && !hideSubscribed && isSubscribed && (
-        <IonIcon icon={heart} className={styles.subscribedIcon} />
+
+        <IonIcon    icon={checkmarkOutline} 
+                    className={styles.smallSubscribedIcon} />
+
       )}
     </>
   );
