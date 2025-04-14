@@ -127,13 +127,17 @@ export default function SharedTabButton({
   const longPressBind = useLongPress(onLongPress, tabLongPressSettings);
 
   return (
-    <IonTabButton
-      onClick={onDefaultClick}
-      className={styles.tabButton}
-      {...longPressBind()}
-      {...rest}
-    >
-      {children}
-    </IonTabButton>
+
+        <IonTabButton
+            onClick={onDefaultClick}
+            className={styles.tabButton}
+            {...longPressBind()}
+            {...rest}
+        >
+
+            {children}
+
+        </IonTabButton>
+
   );
 }
