@@ -98,7 +98,6 @@ export default function TextSize() {
           </IonToggle>
         </IonItem>
       </IonList>
-      <HelperText>Default is two ticks from the left.</HelperText>
     </>
   );
 }
