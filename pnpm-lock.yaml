@@ -121,6 +121,9 @@ importers:
       core-js:
         specifier: ^3.41.0
         version: 3.41.0
+      corepack:
+        specifier: ^0.32.0
+        version: 0.32.0
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
@@ -2877,6 +2880,11 @@ packages:
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+
+  corepack@0.32.0:
+    resolution: {integrity: sha512-KhahVUFy7xL8OTty/ToY646hXMQhih8rnvUkA9/qnk/u4QUF2+SbQneX/zZnDxG1NiABFm5ojZCWnIv93oyhhQ==}
+    engines: {node: ^18.17.1 || ^20.10.0 || >=22.11.0}
+    hasBin: true
 
   cosmiconfig@8.3.6:
     resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
@@ -10280,6 +10288,8 @@ snapshots:
   core-js@3.41.0: {}
 
   core-util-is@1.0.3: {}
+
+  corepack@0.32.0: {}
 
   cosmiconfig@8.3.6(typescript@5.8.2):
     dependencies:

@@ -10,7 +10,7 @@ test("load community posts", async ({ page }) => {
   await page.goto("/");
   await page.waitForURL("/posts/lemmy.world/all");
 
-  await expect(page).toHaveTitle("Voyager for Lemmy");
+  await expect(page).toHaveTitle("Seevoy");
 
   await expect(page.getByText(posts[0]!.post.name)).toBeVisible();
 });
