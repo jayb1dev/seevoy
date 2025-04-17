@@ -108,6 +108,7 @@ export default function SettingsPage() {
 
         {databaseError && <DatabaseErrorItem />}
 
+        {/*
         {!isNative() && (
           <IonList inset>
             <IonItem routerLink="/settings/install">
@@ -133,6 +134,8 @@ export default function SettingsPage() {
             </IonItem>
           </IonList>
         )}
+        */}
+
         <IonList inset>
           <IonItem routerLink="/settings/general">
             <IconBg

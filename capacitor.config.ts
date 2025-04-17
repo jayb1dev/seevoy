@@ -2,8 +2,8 @@ import { CapacitorConfig } from "@capacitor/cli";
 import { KeyboardResize } from "@capacitor/keyboard";
 
 const config: CapacitorConfig = {
-  appId: "app.vger.voyager",
-  appName: "Voyager",
+  appId: "app.seev.seevoy",
+  appName: "Seevoy",
   webDir: "dist",
   server: {
     androidScheme: "https",

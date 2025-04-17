@@ -131,26 +131,12 @@ export default function InstallAppPage() {
       return (
         <>
           <h3>
-            <IonIcon icon={checkmarkCircleOutline} color="success" /> App
-            Installed
+            <IonIcon icon={checkmarkCircleOutline} color="success" /> 
+            App Installed
           </h3>
           <IonText color="medium">
-            <p>Congrats, you&apos;re browsing from the webapp!</p>
-            <p>You can also install the native app for a richer experience.</p>
+            <p>Congrats, you're browsing from the webapp!</p>
           </IonText>
-          {badges}
-        </>
-      );
-    }
-
-    if (beforeInstallPrompt.event) {
-      return (
-        <>
-          <h3>How to get the App</h3>
-
-          {badgesWithWeb}
-
-          {why}
         </>
       );
     }
