@@ -108,17 +108,17 @@ export default function SettingsPage() {
 
         {databaseError && <DatabaseErrorItem />}
 
-        {/*
         {!isNative() && (
           <IonList inset>
             <IonItem routerLink="/settings/install">
               <IconBg color="#0e7afe" slot="start">
                 <IonIcon icon={apps} />
               </IconBg>
-              <IonLabel className="ion-text-nowrap">Install app</IonLabel>
+              <IonLabel className="ion-text-nowrap">Install App</IonLabel>
               {shouldInstall && <IonBadge color="danger">1</IonBadge>}
             </IonItem>
 
+            {/*
             <IonItem routerLink="/settings/update">
               <IconBg
                 color="color(display-p3 0 0.8 0)"
@@ -132,9 +132,10 @@ export default function SettingsPage() {
                 <IonBadge color="danger">1</IonBadge>
               )}
             </IonItem>
+            */}
+
           </IonList>
         )}
-        */}
 
         <IonList inset>
           <IonItem routerLink="/settings/general">
