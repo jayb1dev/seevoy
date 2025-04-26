@@ -296,7 +296,11 @@ ion-modal.save-as-image-modal {
 
 .collapse-md-margins {
   /* Prevent zalgo */
-  overflow: hidden;
+  /* overflow: hidden; */
+
+  > ol {
+    margin-left:    10px;
+  }
 
   > *:first-child,
   > *:first-child > *:first-child,

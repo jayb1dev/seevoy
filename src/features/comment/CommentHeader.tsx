@@ -105,8 +105,10 @@ export default function CommentHeader({
                 showBadge={false}
                 showTag={false}
                 sourceUrl={commentView.comment.ap_id}
-              />{" "}
-              deleted their comment.
+              />
+              {" "}
+              <br />
+              User deleted comment.
             </div>
             <div className={styles.spacer} />
             {renderAside(comment.updated || comment.published)}
@@ -116,7 +118,6 @@ export default function CommentHeader({
         return (
           <>
             <div className={styles.deletedLabel}>
-              mod removed{" "}
               <PersonLink
                 person={commentView.creator}
                 opId={commentView.post.creator_id}
@@ -125,7 +126,9 @@ export default function CommentHeader({
                 showTag={false}
                 sourceUrl={commentView.comment.ap_id}
               />
-              &apos;s comment
+              {" "}
+              <br />
+              Mod deleted comment.
             </div>
             <div className={styles.spacer} />
             {renderAside(comment.updated || comment.published)}
