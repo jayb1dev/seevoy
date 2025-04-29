@@ -69,10 +69,6 @@ export default function GalleryPostActions({
     <BottomContainer>
       <AltText alt={alt} title={title} />
 
-      <div>
-        Fix layout - 0077 vspacer
-      </div>
-
       <BottomContainerActions withBg>
 
         <div className={styles.container} onClick={(e) => e.stopPropagation()}>
