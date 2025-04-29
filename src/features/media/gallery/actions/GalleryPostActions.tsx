@@ -68,9 +68,26 @@ export default function GalleryPostActions({
   return (
     <BottomContainer>
       <AltText alt={alt} title={title} />
+
+      <div>
+        Fix layout - 0077 vspacer
+      </div>
+
       <BottomContainerActions withBg>
+
         <div className={styles.container} onClick={(e) => e.stopPropagation()}>
           <Voting post={post} imgSrc={imgSrc} />
+        </div>
+
+        <div className={styles.vspacer}>
+        </div>
+
+        <div className={styles.container} onClick={(e) => e.stopPropagation()}>
+
+          <div className={styles.spacer}>
+          {" "}
+          </div>
+
           <div
             onClick={() => {
               close();
@@ -83,11 +100,26 @@ export default function GalleryPostActions({
             }}
           >
             <div className={styles.section}>
+
               <IonIcon icon={chatbubbleOutline} />
-              <div className={styles.amount}>{post.counts.comments}</div>
+
+              <div className={styles.spacer}>
+                {" "}
+              </div>
+
+              <div>
+                {post.counts.comments}
+              </div>
+
             </div>
           </div>
+
+          <div className={styles.spacer}>
+          {" "}
+          </div>
+
           <IonIcon icon={getShareIcon()} onClick={shareImage} />
+
           {isNative() ? (
             <GalleryActions post={post} imgSrc={imgSrc} />
           ) : (
@@ -95,6 +127,7 @@ export default function GalleryPostActions({
               <MoreActions post={post} />
             </InFeedContext>
           )}
+
         </div>
       </BottomContainerActions>
     </BottomContainer>
