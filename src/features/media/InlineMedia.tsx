@@ -76,6 +76,14 @@ export default function InlineMedia({
           dispatch(imageLoaded({ src, aspectRatio: width / height }));
         }}
       />
+
+      <div>
+        <a href={src}>{src}</a>
+      </div>
+      <div>
+        <a href={mediaRef}>{mediaRef}</a>
+      </div>
+
     </MediaPlaceholder>
   );
 }

@@ -125,6 +125,10 @@ export default function GalleryPostActions({
           )}
 
         </div>
+
+        <div className={styles.vspacer}>
+        </div>
+
       </BottomContainerActions>
     </BottomContainer>
   );
