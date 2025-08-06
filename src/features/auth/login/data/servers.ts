@@ -7,11 +7,10 @@ import { uniq } from "es-toolkit";
 export const SERVERS_BY_CATEGORY = {
   general: [
     "lemmy.world",
-    "lemm.ee",
+    "lemmy.zip",
     "sh.itjust.works",
     "sopuli.xyz",
     "reddthat.com",
-    "lemmy.zip",
     "lemmy.one",
     "lemmy.today",
     "lemmings.world",

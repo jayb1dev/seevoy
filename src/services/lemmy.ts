@@ -34,7 +34,7 @@ interface CustomLimit {
 }
 
 const CUSTOM_LIMITS: Record<string, CustomLimit> = {
-  ["lemm.ee"]: {
+  ["lemmy.zip"]: {
     maxFileSize: 490_000, // 490 kB
     maxWidth: 1200,
     maxHeight: 1200,
