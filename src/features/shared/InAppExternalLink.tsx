@@ -40,13 +40,17 @@ export default function InAppExternalLink({
 
 export function IonItemInAppExternalLink({
   href,
+  className,
   onClick: _onClick,
   onClickCompleted,
   ...rest
 }: React.ComponentProps<typeof IonItem> & AdditionalLinkProps) {
   const onClick = useOnClick(href, _onClick, onClickCompleted);
 
-  return <IonItem href={href} onClick={onClick} {...rest} />;
+  return <IonItem className={className} 
+                    href={href} 
+                    onClick={onClick} 
+                    {...rest} />;
 }
 
 function useOnClick(

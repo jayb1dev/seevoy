@@ -4,6 +4,8 @@ import Media, { MediaProps } from "#/features/media/Media";
 import { cx } from "#/helpers/css";
 import { useAppDispatch } from "#/store";
 
+import { IonItemInAppExternalLink } from "#/features/shared/InAppExternalLink";
+
 import { IMAGE_FAILED, imageFailed, imageLoaded } from "./imageSlice";
 import MediaPlaceholder from "./MediaPlaceholder";
 import { isLoadedAspectRatio } from "./useAspectRatio";
@@ -43,12 +45,16 @@ export default function InlineMedia({
   }
 
   return (
+
+    <>
     <MediaPlaceholder
       className={className}
       style={baseStyle}
       state={buildPlaceholderState()}
       defaultAspectRatio={defaultAspectRatio}
+      src={src}
     >
+
       <Media
         {...props}
         src={src}
@@ -77,13 +83,29 @@ export default function InlineMedia({
         }}
       />
 
-      <div>
-        <a href={src}>{src}</a>
-      </div>
-      <div>
-        <a href={mediaRef}>{mediaRef}</a>
-      </div>
-
     </MediaPlaceholder>
+
+    <div
+            style={{
+                width:          `100%`,
+                marginLeft:     `auto`,
+                marginRight:    `0`,
+                display:        `flex`,
+                justifyContent: `flex-end`,
+                alignItems:     `end`  }} >
+
+        <IonItemInAppExternalLink
+                details
+                href={src}
+                target="_blank"
+                rel="noopener noreferrer" >
+
+                Link
+
+        </IonItemInAppExternalLink>
+    </div>
+
+    </>
   );
+
 }
