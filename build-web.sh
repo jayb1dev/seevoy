@@ -52,7 +52,7 @@ export BUILD_FOSS_ONLY=true
 # echo "Installed workbox-window..."
 # echo
 
-command="pnpm --no-color exec ionic build"
+command="pnpm --no-color exec ionic build -- --mode development"
 
 echo
 echo "Begin: ${command}"
