@@ -35,22 +35,22 @@ cat src/routes/pages/settings/about/AppDetails.tsx.template | \
 
 export BUILD_FOSS_ONLY=true
 
-# corepack enable
-# pnpm --no-color install
+corepack enable
+pnpm --no-color install
 
-# pushd ios/App
-# pod install
-# popd
+pushd ios/App
+pod install
+popd
 
-# echo
-# echo "Install workbox-window..."
-# echo
-# 
-# pnpm --no-color i -D workbox-window
-# 
-# echo
-# echo "Installed workbox-window..."
-# echo
+echo
+echo "Install workbox-window..."
+echo
+ 
+pnpm --no-color i -D workbox-window
+ 
+echo
+echo "Installed workbox-window..."
+echo
 
 command="pnpm --no-color exec ionic build"
 
