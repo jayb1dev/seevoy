@@ -7,6 +7,7 @@ import {
 import { OverlayEventDetail } from "@ionic/react/dist/types/components/react-component-lib/interfaces";
 import { startCase } from "es-toolkit";
 import {
+  swapVerticalOutline,
   arrowUpCircleOutline,
   barChartOutline,
   calendarOutline,
@@ -187,7 +188,7 @@ export function getSortIcon(sort: ExtendedSortType): string {
     case "Hot":
       return flameOutline;
     case "Active":
-      return arrowUpCircleOutline;
+      return swapVerticalOutline;
     case "New":
       return timeOutline;
     case "MostComments":

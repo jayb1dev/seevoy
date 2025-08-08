@@ -52,7 +52,7 @@ echo
 echo "Installed workbox-window..."
 echo
 
-command="pnpm --no-color exec ionic build -- --mode development"
+command="pnpm --no-color exec ionic build --mode development"
 
 echo
 echo "Begin: ${command}"

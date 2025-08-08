@@ -1,4 +1,12 @@
-import { IonBackButton, IonButtons, IonPage, IonToolbar } from "@ionic/react";
+import { 
+    IonBackButton, 
+    IonButtons, 
+    IonButton, 
+    IonIcon, 
+    IonPage, 
+    IonToolbar,
+} from "@ionic/react";
+
 import { ListingType } from "lemmy-js-client";
 
 import { followIdsSelector } from "#/features/auth/siteSlice";
@@ -32,6 +40,20 @@ import { LIMIT } from "#/services/lemmy";
 import { useAppSelector } from "#/store";
 
 import FeedContent from "./FeedContent";
+
+//
+// Support "scroll to top" on web app
+//
+import { 
+    arrowUpCircleOutline,
+    chevronUpOutline
+
+} from "ionicons/icons";
+import { useContext } from "react";
+import { AppContext } from "#/features/auth/AppContext";
+import { PageContext } from "#/features/auth/PageContext";
+import { FeedContext } from "#/features/feed/FeedContext";
+
 
 interface SpecialFeedProps {
   type: ListingType;
@@ -109,6 +131,20 @@ export default function SpecialFeedPage({ type }: SpecialFeedProps) {
     );
   })();
 
+  //
+  // Scroll to top 
+  //
+  const { activePageRef } = useContext(AppContext);
+
+  function scrollToTop() {
+
+    console.log("BEGIN scrollToTop()", activePageRef);
+
+    activePageRef.current.current.scrollToIndex(0, {smooth: true});
+
+  }
+
+
   return (
     <TitleSearchProvider>
       <PostAppearanceProvider feed={postFeed}>
@@ -131,6 +167,13 @@ export default function SpecialFeedPage({ type }: SpecialFeedProps) {
                     {type === "ModeratorView" && <ModActions type={type} />}
                     <PostSort sort={sort} setSort={setSort} />
                     <SpecialFeedMoreActions type={type} />
+
+                    <IonButton onClick={() => scrollToTop()} >
+                        <IonIcon 
+                            icon={chevronUpOutline} 
+                            slot="icon-only" />
+                    </IonButton>
+
                   </IonButtons>
                 </TitleSearch>
               </IonToolbar>

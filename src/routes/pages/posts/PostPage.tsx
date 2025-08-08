@@ -1,6 +1,8 @@
 import {
   IonBackButton,
   IonButtons,
+  IonButton,
+  IonIcon,
   IonContent,
   IonPage,
   IonRefresher,
@@ -29,6 +31,20 @@ import { useBuildGeneralBrowseLink } from "#/helpers/routes";
 import useClient from "#/helpers/useClient";
 import FeedContent from "#/routes/pages/shared/FeedContent";
 import { useAppDispatch, useAppSelector } from "#/store";
+
+//
+// Support "scroll to top" on web app
+//
+import { 
+    arrowUpCircleOutline,
+    chevronUpOutline
+} from "ionicons/icons";
+
+import { useContext } from "react";
+import { AppContext } from "#/features/auth/AppContext";
+import { PageContext } from "#/features/auth/PageContext";
+import { FeedContext } from "#/features/feed/FeedContext";
+
 
 interface PostPageParams {
   id: string;
@@ -140,6 +156,19 @@ function PostPageContent({
     );
   })();
 
+  //
+  // Scroll to top 
+  //
+  const { activePageRef } = useContext(AppContext);
+
+  function scrollToTop() { 
+
+    console.log("BEGIN comment view scrollToTop()", activePageRef);
+
+    activePageRef.current.current.scrollToIndex(0, {smooth: true});
+
+  }
+
   return (
     <IonPage ref={pageRef}>
       <AppHeader>
@@ -154,6 +183,13 @@ function PostPageContent({
             {postIfFound && <MoreModActions post={postIfFound} />}
             <CommentSort sort={sort} setSort={setSort} />
             {postIfFound && <MoreActions post={postIfFound} />}
+
+            <IonButton onClick={() => scrollToTop()} >
+                <IonIcon
+                    icon={chevronUpOutline}
+                    slot="icon-only" />
+            </IonButton>
+
           </IonButtons>
         </IonToolbar>
       </AppHeader>
