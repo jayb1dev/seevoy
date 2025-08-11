@@ -26,10 +26,10 @@ export default function SleepDialog({ onDismiss }: SleepProps) {
         />
       </div>
 
-      <div className={styles.title}>Sleep Advisory</div>
+      <div className={styles.title}>Sleep Mode</div>
 
       <div className={styles.description}>
-        Falling asleep?
+        Did you fall asleep?
       </div>
 
       <button className={styles.closeButton} onClick={() => onDismiss()}>
