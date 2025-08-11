@@ -137,11 +137,8 @@ export default function SpecialFeedPage({ type }: SpecialFeedProps) {
   const { activePageRef } = useContext(AppContext);
 
   function scrollToTop() {
-
     console.log("BEGIN scrollToTop()", activePageRef);
-
     activePageRef.current.current.scrollToIndex(0, {smooth: true});
-
   }
 
 

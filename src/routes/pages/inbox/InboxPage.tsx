@@ -1,6 +1,8 @@
 import {
   IonBackButton,
   IonButtons,
+  IonButton,
+  IonIcon,
   IonPage,
   IonTitle,
   IonToolbar,
@@ -24,11 +26,26 @@ import { useAppDispatch, useAppSelector } from "#/store";
 
 import MarkAllAsReadButton from "./MarkAllAsReadButton";
 
+//
+// Support "scroll to top" on web app
+//    
+import {
+    arrowUpCircleOutline,
+    chevronUpOutline
+
+} from "ionicons/icons";
+
+import { useContext } from "react";
+import { AppContext } from "#/features/auth/AppContext";
+import { PageContext } from "#/features/auth/PageContext";
+import { FeedContext } from "#/features/feed/FeedContext";
+
 interface InboxPageProps {
   showRead?: boolean;
 }
 
 export default function InboxPage({ showRead }: InboxPageProps) {
+
   const pageRef = useRef<HTMLElement>(null);
   const dispatch = useAppDispatch();
   const client = useClient();
@@ -92,7 +109,24 @@ export default function InboxPage({ showRead }: InboxPageProps) {
     return everything;
   };
 
+  //
+  // Scroll to top
+  //
+
+  function scrollToTop() {
+
+    console.log("BEGIN inbox scrollToTop() log pageRef", pageRef);
+
+    //
+    // This is terrible...
+    //
+    var node = pageRef.current.childNodes[1].childNodes[1];
+    node.scrollTo({ top: 0, behavior: 'smooth' }); 
+    
+  }
+
   return (
+
     <IonPage ref={pageRef}>
       <AppHeader>
         <IonToolbar>
@@ -106,13 +140,28 @@ export default function InboxPage({ showRead }: InboxPageProps) {
           </IonTitle>
 
           <IonButtons slot="end">
+
             <MarkAllAsReadButton />
+
+            <IonButton onClick={() => scrollToTop()} >
+                <IonIcon
+                    icon={chevronUpOutline}
+                    slot="icon-only" />
+            </IonButton>
+
           </IonButtons>
+
         </IonToolbar>
       </AppHeader>
+
       <FeedContent>
         <InboxFeed fetchFn={fetchFn} />
       </FeedContent>
+
     </IonPage>
+
   );
+
 }
+
+

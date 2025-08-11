@@ -14,15 +14,22 @@ interface SleepProps {
 export default function SleepDialog({ onDismiss }: SleepProps) {
   return (
     <FloatingDialog onDismiss={onDismiss}>
+
       <br />
       <br />
       <br />
+
       <div className={styles.bed}>
-        <IonIcon icon={bed} />
+        <IonIcon 
+            icon={bed} 
+            onClick={() => onDismiss()}
+        />
       </div>
-      <div className={styles.title}>Sleep Mode</div>
+
+      <div className={styles.title}>Sleep Advisory</div>
+
       <div className={styles.description}>
-        Did you fall asleep?
+        Falling asleep?
       </div>
 
       <button className={styles.closeButton} onClick={() => onDismiss()}>
