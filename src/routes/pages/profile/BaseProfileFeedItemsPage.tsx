@@ -1,4 +1,11 @@
-import { IonButtons, IonTitle, IonToolbar } from "@ionic/react";
+import { 
+	IonButtons, 
+	IonButton, 
+	IonIcon, 
+	IonTitle, 
+	IonToolbar } 
+from "@ionic/react";
+
 import { IonPage } from "@ionic/react";
 import { IonBackButton } from "@ionic/react";
 import { useParams } from "react-router-dom";
@@ -10,6 +17,17 @@ import PostCommentFeed, {
 import AppHeader from "#/features/shared/AppHeader";
 import { useBuildGeneralBrowseLink } from "#/helpers/routes";
 import FeedContent from "#/routes/pages/shared/FeedContent";
+
+//          
+// Support "scroll to top" on web app
+//  
+import {    
+    arrowUpCircleOutline,
+    chevronUpOutline
+} from "ionicons/icons";
+
+import { useContext } from "react";
+import { AppContext } from "#/features/auth/AppContext";
 
 interface BaseProfileFeedItemsPageProps {
   label: string;
@@ -25,6 +43,16 @@ export default function BaseProfileFeedItemsPage({
   const buildGeneralBrowseLink = useBuildGeneralBrowseLink();
   const { handle } = useParams<{ handle: string }>();
 
+  //
+  // Scroll to top
+  //
+  const { activePageRef } = useContext(AppContext);
+
+  function scrollToTop() {
+    console.log("BEGIN BaseProfileFeedItemsPage scrollToTop()", activePageRef);
+    activePageRef.current.current.scrollToIndex(0, {smooth: true});
+  }
+
   return (
     <IonPage>
       <AppHeader>
@@ -39,6 +67,15 @@ export default function BaseProfileFeedItemsPage({
           </IonButtons>
 
           {sortComponent && <IonButtons slot="end">{sortComponent}</IonButtons>}
+
+          <IonButtons slot="end">
+            <IonButton onClick={() => scrollToTop()} >
+                <IonIcon
+                    icon={chevronUpOutline}
+                    slot="icon-only" />
+            </IonButton>
+          </IonButtons>
+
         </IonToolbar>
       </AppHeader>
       <FeedContent>

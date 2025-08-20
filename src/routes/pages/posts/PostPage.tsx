@@ -45,6 +45,8 @@ import { AppContext } from "#/features/auth/AppContext";
 import { PageContext } from "#/features/auth/PageContext";
 import { FeedContext } from "#/features/feed/FeedContext";
 
+import { findCurrentPage } from "#/helpers/ionic";
+
 
 interface PostPageParams {
   id: string;
@@ -100,6 +102,7 @@ function PostPageContent({
   // TODO This is gets quite hacky when dynamically using virtual scroll view.
   // pageRef should probably be refactored
   useSetActivePage(pageRef, !virtualEnabled);
+
   const Content = virtualEnabled ? FeedContent : IonContent;
 
   useEffect(() => {
@@ -163,9 +166,28 @@ function PostPageContent({
 
   function scrollToTop() { 
 
-    console.log("BEGIN comment view scrollToTop()", activePageRef);
+    console.log("BEGIN PostPage.tsx scrollToTop()", activePageRef);
 
-    activePageRef.current.current.scrollToIndex(0, {smooth: true});
+    if(activePageRef.current.current.scrollToIndex) {
+        console.log("DEFAULT comment view scrollToTop()", activePageRef);
+        activePageRef.current.current.scrollToIndex(0, {smooth: true});
+        return;
+    }
+
+    //
+    // Still terrible...
+    //
+    console.log("FALLBACK PostPage.tsx scrollToTop()", activePageRef);
+
+    var page = findCurrentPage();
+
+    var scroll =
+        page.querySelector(".virtual-scroller") ??
+        page.shadowRoot?.querySelector(".inner-scroll");
+
+    scroll.scrollTo({ top: 0, behavior: "smooth" });
+
+    console.log("END PostPage.tsx scroll...");
 
   }
 

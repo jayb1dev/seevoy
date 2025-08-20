@@ -115,7 +115,7 @@ export default function InboxPage({ showRead }: InboxPageProps) {
 
   function scrollToTop() {
 
-    console.log("BEGIN inbox scrollToTop() log pageRef", pageRef);
+    console.log("BEGIN InboxPage.tsx scrollToTop() log pageRef", pageRef);
 
     //
     // This is terrible...
